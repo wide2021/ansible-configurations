@@ -1,0 +1,10 @@
+[webservers]
+3.235.236.27 
+[databaseservers]
+3.236.141.21
+
+[webservers:vars]
+ansible_ssh_private_key_file=keypair.pem
+
+[databaseservers:vars]
+ansible_ssh_private_key_file=keypair.pem
