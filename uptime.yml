@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Execute the Uptime command over Command module
+    register: uptimeoutput
+    command: "uptime"
+
+  - name: Execute the df command
+    register: dfout
+    command: "df -h"
+
+  - debug:
+     var: uptimeoutput.stdout_lines
+  - debug:
+     var: dfout.stdout_lines
